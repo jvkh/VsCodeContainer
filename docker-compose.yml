@@ -1,6 +1,23 @@
 version: "3"
 
 services:
+  mermaid-server:
+    image: felixlohmeier/mermaid
+    container_name: mermaid
+    
+
+  code-server-0:
+    build: ./
+    container_name: code-server-0
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-00:/config
+    ports:
+      - 50000:8443
+
   code-server-1:
     build: ./
     container_name: code-server-1
@@ -9,22 +26,138 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./client-data/client-01/config:/config
-      - ./client-data/client-01/workspace:/config/workspace
+      - ./client-data/client-01:/config
     ports:
-      - 8443:8443
-  #  restart: unless-stopped
+      - 50001:8443
 
-  # code-server-2:
-  #   image: lscr.io/linuxserver/code-server:latest
-  #   container_name: code-server-2
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - TZ=Etc/UTC
-  #   ports:
-  #     - 8444:8443
-  #   volumes:
-  #     - ./config-2:/config
-  #     - ./workspace-2:/config/workspace
-  #   restart: unless-stopped
+  code-server-2:
+    build: ./
+    container_name: code-server-2
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-02:/config
+    ports:
+      - 50002:8443
+
+  code-server-3:
+    build: ./
+    container_name: code-server-3
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-03:/config
+    ports:
+      - 50003:8443
+
+  code-server-4:
+    build: ./
+    container_name: code-server-4
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-04:/config
+    ports:
+      - 50004:8443
+
+  code-server-5:
+    build: ./
+    container_name: code-server-5
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-05:/config
+    ports:
+      - 50005:8443
+
+  code-server-6:
+    build: ./
+    container_name: code-server-6
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-06:/config
+    ports:
+      - 50006:8443
+
+  code-server-7:
+    build: ./
+    container_name: code-server-7
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-07:/config
+    ports:
+      - 50007:8443
+
+  code-server-8:
+    build: ./
+    container_name: code-server-8
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-08:/config
+    ports:
+      - 50008:8443
+
+  code-server-9:
+    build: ./
+    container_name: code-server-9
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-09:/config
+    ports:
+      - 50009:8443
+
+  code-server-10:
+    build: ./
+    container_name: code-server-10
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-10:/config
+    ports:
+      - 50010:8443
+
+  code-server-11:
+    build: ./
+    container_name: code-server-11
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-11:/config
+    ports:
+      - 50011:8443
+
+  code-server-12:
+    build: ./
+    container_name: code-server-12
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./client-data/client-12:/config
+    ports:
+      - 50012:8443
